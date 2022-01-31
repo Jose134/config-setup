@@ -9,7 +9,6 @@ sudo apt install -y htop
 sudo apt install -y g++
 sudo apt install -y cmake
 sudo apt install -y make
-sudo apt install -y git
 sudo apt install -y code
 sudo apt install -y vlc
 sudo apt install -y filezilla
@@ -42,7 +41,7 @@ rm -rf Twilight-Cursors
 
 # Tela icon theme
 wget https://github.com/vinceliuice/Tela-icon-theme/archive/refs/tags/2022-01-25.zip
-unzip Tela-icon-theme-2022-01-25.zip
+unzip 2022-01-25.zip
 cd Tela-icon-theme-2022-01-25
 ./install.sh
 cd ..
