@@ -101,5 +101,6 @@ sudo cp /usr/share/gnome-shell/theme/Pop/gnome-shell-theme.gresource /usr/share/
 sudo cp gdm/gnome-shell-theme.gresource /usr/share/gnome-shell/theme/Pop/gnome-shell-theme.gresource
 
 # GNOME Shell extensions
-mv sound-output-device-chooser@kgshank.net ~/.local/gnome-shell/extensions/sound-output-device-chooser@kgshank.net
+mv sound-output-device-chooser@kgshank.net ~/.local/share/gnome-shell/extensions/sound-output-device-chooser@kgshank.net
 gnome-extensions enable sound-output-device-chooser@kgshank.net
+
