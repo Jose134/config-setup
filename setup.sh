@@ -15,6 +15,7 @@ sudo apt install -y filezilla
 sudo apt install -y discord
 sudo apt install -y neofetch
 sudo apt install -y nodejs
+sudo apt install -y gnome-shell-extensions
 
 flatpak install flathub com.google.AndroidStudio
 flatpak install flathub com.axosoft.GitKraken
@@ -64,9 +65,13 @@ rm *.ttf *.otf
 
 # Wallpaper
 mkdir ~/Pictures/Wallpaper
-cp img/1080p.jpg ~/Pictures/Wallpaper
+cp wallpaper/1080p.jpg ~/Pictures/Wallpaper
 gsettings set org.gnome.desktop.background picture-uri file:///home/$USER/Pictures/Wallpaper/1080p.jpg
 gsettings set org.gnome.desktop.background picture-options 'zoom'
+
+# Login Wallpaper
+sudo mkdir /usr/share/backgrounds/darkbird
+sudo cp wallpaper/WallpaperLock.png /usr/share/backgrounds/darkbird
 
 # Extra GNOME configuration
 gsettings set org.gnome.desktop.interface clock-show-seconds true
@@ -88,3 +93,13 @@ cp poshthemes/DarkBird.omp.json ~/.poshthemes
 
 # Config files
 mv config/* ~/.config/
+
+# GDM3 config
+sudo cp /etc/gdm3/greeter.dconf-defaults /etc/gdm3/greeter.dconf-defaults-backup
+sudo cp gdm/greeter.dconf-defaults /etc/gdm3/greeter.dconf-defaults
+sudo cp /usr/share/gnome-shell/theme/Pop/gnome-shell-theme.gresource /usr/share/gnome-shell/theme/Pop/gnome-shell-theme.gresource.back
+sudo cp gdm/gnome-shell-theme.gresource /usr/share/gnome-shell/theme/Pop/gnome-shell-theme.gresource
+
+# GNOME Shell extensions
+mv sound-output-device-chooser@kgshank.net ~/.local/gnome-shell/extensions/sound-output-device-chooser@kgshank.net
+gnome-extensions enable sound-output-device-chooser@kgshank.net
